@@ -11,7 +11,7 @@ export const SearchBar = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(textInputRef.current.value);
-    navigate('/search?q=' + textInputRef.current.value);
+    navigate('/results?q=' + textInputRef.current.value);
   };
 
   return (
@@ -19,7 +19,7 @@ export const SearchBar = () => {
       <TextInput
         ref={textInputRef}
         type='text'
-        placeholder='placeholder'
+        placeholder='Enter a Twitter handle'
         onSubmit={onSubmit}
       ></TextInput>
       <Button type='submit' onClick={onSubmit}>
