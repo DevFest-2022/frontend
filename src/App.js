@@ -5,10 +5,8 @@ import { Home } from './modules/Home';
 import { Results } from './modules/Results';
 
 function App() {
-  console.log(ROUTES);
   return (
     <div>
-      {/* <Results /> */}
       <Router>
         <Routes>
           <Route path={ROUTES.HOME_PATH} element={<Home />} />
