@@ -1,13 +1,45 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'MonumentExtended';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @font-face {
+    font-family: MonumentExtended;
+    font-weight: 500;
+    src: url(./assets/MonumentExtended-Regular.otf);
+  }
+
+  @font-face {
+    font-family: MonumentExtended;
+    font-weight: 700;
+    src: url(./assets/MonumentExtended-Ultrabold.otf);
+  }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'MonumentExtended';
+  @font-face {
+    font-family: MonumentExtended;
+    font-weight: 500;
+    src: url(./assets/MonumentExtended-Regular.otf);
+  }
+
+  @font-face {
+    font-family: MonumentExtended;
+    font-weight: 700;
+    src: url(./assets/MonumentExtended-Ultrabold.otf);
+  }
+}
+
+@font-face {
+  font-family: MonumentExtended;
+  font-weight: 500;
+  src: url(./assets/MonumentExtended-Regular.otf);
+}
+
+@font-face {
+  font-family: MonumentExtended;
+  font-weight: 700;
+  src: url(./assets/MonumentExtended-Ultrabold.otf);
 }

@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { h3 } from '../constants/Typography';
+
+const StyledText = styled.div`
+  ${h3}
+`;
 const Form = styled.form``;
 const TextInput = styled.input``;
-const Button = styled.button``;
-
+const Button = styled.div`
+  ${h3}
+  font-family: 'MonumentExtended';
+`;
 export const SearchBar = () => {
   const navigate = useNavigate();
   const textInputRef = useRef(null);
@@ -23,8 +30,9 @@ export const SearchBar = () => {
         onSubmit={onSubmit}
       ></TextInput>
       <Button type='submit' onClick={onSubmit}>
-        Search
+        <StyledText>Search</StyledText>
       </Button>
+      <StyledText>test</StyledText>
     </Form>
   );
 };
