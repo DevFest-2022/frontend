@@ -6,7 +6,7 @@ import { Profile } from './Profile';
 import { data } from '../../fakedata';
 import { tweets } from '../../faketweets';
 import { Tweet } from './Tweet';
-import { profiles } from '../../profiles'
+import { profiles } from '../../profiles';
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -72,6 +72,7 @@ const ProfilesContainer = styled.div`
 `;
 
 const TopLeft = styled.div`
+  margin-top: 150px;
   margin-left: 20px;
   margin-right: auto;
 `;
