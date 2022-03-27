@@ -67,17 +67,14 @@ export const Results = () => {
     axios
       .get('http://127.0.0.1:5000/' + searchedUserStr)
       .then((response) => {
-        console.log(response.data.results);
         setAccountData(response.data.results);
       })
       .catch((error) => {
         console.log(error);
       });
-    console.log('q search param: ' + searchParams.get('q'));
   }, [searchParams, searchedUserStr]);
 
   const makeAccounts = () => {
-    console.log('running!');
     return accountData.map((account) => {
       return (
         <Account key={account.handle} accountData={account}>
