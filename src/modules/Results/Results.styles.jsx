@@ -1,23 +1,52 @@
 import styled from 'styled-components';
+import { h1, h4 } from '../../core/constants';
 
-export const ResultContainer = styled.div`
+export const ComponentContainer = styled.div`
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  border: solid black 1px;
+  align-items: center;
 `;
 
-export const ResultHeader = styled.h1``;
-
-export const ResultSubheader = styled.p``;
-
-export const AccountsContainer = styled.div`
+export const ResultContainer = styled.div`
+  background: #fff;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-top: solid black 1px;
+  width: 80%;
+  border: solid black 2px;
+`;
+
+export const HeadersContainer = styled.div`
+  padding: 1.5rem 1rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-bottom: 30px;
+`;
+
+export const ResultHeader = styled.div`
+  ${h1}
+  font-weight: 900;
+  margin-bottom: 10px;
+`;
+
+export const ResultSubheader = styled.div`
+  ${h4}
+`;
+
+export const AccountsContainer = styled.div`
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: solid black 2px;
   width: 100%;
 `;

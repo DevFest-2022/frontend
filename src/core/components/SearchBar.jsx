@@ -41,8 +41,10 @@ export const SearchBar = () => {
   const textInputRef = useRef(null);
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(textInputRef.current.value);
-    navigate('/results?q=' + textInputRef.current.value);
+    if (textInputRef.current.value !== '') {
+      console.log(textInputRef.current.value);
+      navigate('/results?q=' + textInputRef.current.value);
+    }
   };
 
   return (

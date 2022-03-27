@@ -10,14 +10,13 @@ const Form = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 50%;
+  width: 70%;
 `;
 
 const TextInput = styled.input`
   ${h4}
   font-family: 'MonumentExtended';
-  // font-size: 20px;
-  text-align: center;
+  padding-left: 20px;
   height: 65px;
   width: 98.75%;
   border: 2px solid #000;
@@ -41,8 +40,10 @@ export const SearchBarResults = () => {
   const textInputRef = useRef(null);
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(textInputRef.current.value);
-    navigate('/results?q=' + textInputRef.current.value);
+    if (textInputRef.current.value !== '') {
+      console.log(textInputRef.current.value);
+      navigate('/results?q=' + textInputRef.current.value);
+    }
   };
 
   return (
