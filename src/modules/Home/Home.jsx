@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SearchBar } from '../../core';
 import { h1, h2 } from '../../core/constants';
-import { Profile } from './Profile'
+import { Profile } from './Profile';
 import { data } from '../../fakedata';
 import { tweets } from '../../faketweets';
 import { Tweet } from './Tweet';
@@ -65,7 +65,7 @@ const FollowNextContainer = styled.div`
 `;
 
 const ProfilesContainer = styled.div`
-  display: inline-block;
+  display: flex;
   align-items: center;
   vertical-align: top;
 `;
@@ -105,20 +105,28 @@ export const Home = () => {
         </SearchContainer>
       </ViewportContainer>
       <ViewportContainer>
-        <TopLeft><Tweet data={tweets[0]}></Tweet></TopLeft>
-        <TopRight><Tweet data={tweets[1]}></Tweet></TopRight>
+        <TopLeft>
+          <Tweet data={tweets[0]}></Tweet>
+        </TopLeft>
+        <TopRight>
+          <Tweet data={tweets[1]}></Tweet>
+        </TopRight>
         <HeadingContainer>
-           You can learn a lot from Twitter - we'll help you find your next follow.
+          You can learn a lot from Twitter - we'll help you find your next
+          follow.
         </HeadingContainer>
-        <BottomLeft><Tweet data={tweets[2]}></Tweet></BottomLeft>
-        <BottomRight><Tweet data={tweets[3]}></Tweet></BottomRight>
+        <BottomLeft>
+          <Tweet data={tweets[2]}></Tweet>
+        </BottomLeft>
+        <BottomRight>
+          <Tweet data={tweets[3]}></Tweet>
+        </BottomRight>
       </ViewportContainer>
       <ViewportContainer>
-        <HeadingContainer>
-           See how it works
-        </HeadingContainer>
+        <HeadingContainer>See how it works</HeadingContainer>
         <SubheadingContainer>
-          Click on any of the accounts below. We'll show you the top five accounts they engage with the most.
+          Click on any of the accounts below. We'll show you the top five
+          accounts they engage with the most.
         </SubheadingContainer>
         <ProfilesContainer>
           <Profile data={data.accounts[0]}></Profile>
