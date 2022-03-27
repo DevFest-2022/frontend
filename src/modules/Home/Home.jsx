@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { SearchBar } from '../../core';
 import { h1, h2 } from '../../core/constants';
-import { Profile } from './Profile';
+import { Profile } from './Profile'
+import { data } from '../../fakedata';
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -44,7 +45,7 @@ const SubheadingContainer = styled.div`
   ${h2}
   width: 75%;
   text-align: center;
-  margin-bottom: 66px;
+  margin-bottom: 20px;
 `;
 
 const FollowNextContainer = styled.div`
@@ -61,8 +62,8 @@ const FollowNextContainer = styled.div`
   background: #fff;
 `;
 
-const ProfileContainer = styled.div`
-  display: flex;
+const ProfilesContainer = styled.div`
+  display: inline-block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -83,19 +84,21 @@ export const Home = () => {
       </ViewportContainer>
       <ViewportContainer>
         <HeadingContainer>
-          You can learn a lot from Twitter - we'll help you find your next
-          follow.
+           You can learn a lot from Twitter - we'll help you find your next follow.
         </HeadingContainer>
       </ViewportContainer>
       <ViewportContainer>
-        <HeadingContainer>See how it works</HeadingContainer>
+        <HeadingContainer>
+           See how it works
+        </HeadingContainer>
         <SubheadingContainer>
-          Click on any of the accounts below. We'll show you the top five
-          accounts they engage with the most.
+          Click on any of the accounts below. We'll show you the top five accounts they engage with the most.
         </SubheadingContainer>
-        <ProfileContainer>
-          <Profile></Profile>
-        </ProfileContainer>
+        <ProfilesContainer>
+          <Profile data={data.accounts[0]}></Profile>
+          <Profile data={data.accounts[1]}></Profile>
+          <Profile data={data.accounts[2]}></Profile>
+        </ProfilesContainer>
       </ViewportContainer>
     </HomeContainer>
   );
