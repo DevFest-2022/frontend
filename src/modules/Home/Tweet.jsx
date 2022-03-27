@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { h4 } from '../../core/constants/Typography'
+import { useNavigate } from 'react-router-dom';
 
 export const TweetContainer = styled.div`
   background: #fff;
   border: solid black 2px;
   margin: 0px 20px;
-  width: 380px;
+  width: 500px;
   padding: 10px;
-  height: 100px;
+  cursor: pointer;
 `;
 
 export const Text = styled.div`
@@ -30,7 +31,7 @@ export const Image = styled.img`
 
 export const Tweet = ({ data }) => {
     return (
-        <TweetContainer>
+        <TweetContainer onClick={() => window.location=data.url}>
             <Image src={data.photo}></Image>
             <Text>
                 <Handle>@{data.handle}</Handle>

@@ -78,6 +78,7 @@ const TopLeft = styled.div`
 const TopRight = styled.div`
   margin-left: auto;
   margin-right: 20px;
+  margin-bottom: 10px;
 `;
 
 const BottomLeft = styled.div`
