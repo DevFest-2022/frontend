@@ -10,16 +10,18 @@ export const AccountContainer = styled.div`
 export const ProfileImage = styled.img`
   border-radius: 50%;
   display: inline-block;
+  height:120px;
 `;
 
 export const ProfileText = styled.div`
   display: inline-block;
   vertical-align: top;
-  width: 50%;
+  margin: 10px;
 `;
 
 export const ProfileHeader = styled.div`
   vertical-align: top;
+  display: inline-block;
 `;
 
 export const Name = styled.h3`
@@ -31,31 +33,29 @@ export const Handle = styled.div`
 `;
 
 export const Bio = styled.div`
-  vertical-align: bottom;
+    margin-top: 10px;
 `;
 
-export const ViewProfile = styled.p`
+export const ViewProfile = styled.div`
   display: inline-block;
-  border: solid black 1px;
-  border-radius: 20px;
-  padding: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px 30px;
   vertical-align: top;
 `;
 
 export const Account = ({ accountData }) => {
-  return (
-    <AccountContainer>
-      <ProfileImage src={accountData.photo} />
-      <ProfileText>
-        <ProfileHeader>
-          <Name>{accountData.name}</Name>
-          <Handle>@{accountData.handle}</Handle>
-        </ProfileHeader>
-        {/* <ViewProfile>
-                    view profile
-                </ViewProfile> */}
-        <Bio>{accountData.bio}</Bio>
-      </ProfileText>
-    </AccountContainer>
-  );
+    return (
+        <AccountContainer>
+            <ProfileImage src={accountData.photo} />
+            <ProfileText>
+                <ProfileHeader>
+                    <Name>{accountData.name}</Name>
+                    <Handle>@{accountData.handle}</Handle>
+                </ProfileHeader>
+                <ViewProfile>view profile</ViewProfile>
+                <Bio>{accountData.bio}</Bio>
+            </ProfileText>
+        </AccountContainer>
+    );
 };

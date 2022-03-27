@@ -39,13 +39,13 @@ export const ResultHeader = styled.div`
 
 export const ResultSubheader = styled.div`
   ${h4}
+  text-align:center;
 `;
 
 export const AccountsContainer = styled.div`
   background: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   border-top: solid black 2px;
   width: 100%;

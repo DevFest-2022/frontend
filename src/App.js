@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from './core';
 import { Home } from './modules/Home';
 import { Results } from './modules/Results';
+import { colors } from './core/constants/Colors'
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       cellWidth={60}
       strokeWidth={2}
       cellWidth2={12}
+      lineColor={colors.primary}
+      lineColor2={colors.primary}
     >
       <Router>
         <Routes>
