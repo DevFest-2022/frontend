@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../../core/constants/Colors'
+import { data } from 'browserslist';
+import { useNavigate } from 'react-router-dom';
 
 export const ProfileContainer = styled.div`
   background: #fff;
@@ -42,9 +44,15 @@ export const Search = styled.div`
     width: 200px;
     margin: 50px auto auto auto;
     text-align: center;
+    cursor: pointer;
 `;
 
 export const Profile = ({data}) => {
+    const navigate = useNavigate();
+    const onClick = (e) => {
+        e.preventDefault();
+        navigate('/results?q=' + data.handle);
+      };
     return (
         <ProfileContainer>
             <ProfileImage src={data.photo} />
@@ -53,7 +61,7 @@ export const Profile = ({data}) => {
                     <Handle>@{data.handle}</Handle>
                 </ProfileHeader>
             <Bio>{data.bio}</Bio>
-            <Search>Search</Search>
+            <Search onClick={onClick}>Search</Search>
         </ProfileContainer>    
 
     );
