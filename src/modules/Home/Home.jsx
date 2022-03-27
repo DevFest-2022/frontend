@@ -4,6 +4,8 @@ import { SearchBar } from '../../core';
 import { h1, h2 } from '../../core/constants';
 import { Profile } from './Profile'
 import { data } from '../../fakedata';
+import { tweets } from '../../faketweets';
+import { Tweet } from './Tweet';
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -64,9 +66,28 @@ const FollowNextContainer = styled.div`
 
 const ProfilesContainer = styled.div`
   display: inline-block;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  vertical-align: top;
+`;
+
+const TopLeft = styled.div`
+  margin-left: 20px;
+  margin-right: auto;
+`;
+
+const TopRight = styled.div`
+  margin-left: auto;
+  margin-right: 20px;
+`;
+
+const BottomLeft = styled.div`
+  margin-left: 20px;
+  margin-right: auto;
+`;
+
+const BottomRight = styled.div`
+  margin-left: auto;
+  margin-right: 20px;
 `;
 
 export const Home = () => {
@@ -83,9 +104,13 @@ export const Home = () => {
         </SearchContainer>
       </ViewportContainer>
       <ViewportContainer>
+        <TopLeft><Tweet data={tweets[0]}></Tweet></TopLeft>
+        <TopRight><Tweet data={tweets[1]}></Tweet></TopRight>
         <HeadingContainer>
            You can learn a lot from Twitter - we'll help you find your next follow.
         </HeadingContainer>
+        <BottomLeft><Tweet data={tweets[2]}></Tweet></BottomLeft>
+        <BottomRight><Tweet data={tweets[3]}></Tweet></BottomRight>
       </ViewportContainer>
       <ViewportContainer>
         <HeadingContainer>
