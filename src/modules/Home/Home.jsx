@@ -6,6 +6,7 @@ import { Profile } from './Profile';
 import { data } from '../../fakedata';
 import { tweets } from '../../faketweets';
 import { Tweet } from './Tweet';
+import { profiles } from '../../profiles'
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -129,9 +130,9 @@ export const Home = () => {
           accounts they engage with the most.
         </SubheadingContainer>
         <ProfilesContainer>
-          <Profile data={data.accounts[0]}></Profile>
-          <Profile data={data.accounts[1]}></Profile>
-          <Profile data={data.accounts[2]}></Profile>
+          <Profile data={profiles[0]}></Profile>
+          <Profile data={profiles[1]}></Profile>
+          <Profile data={profiles[2]}></Profile>
         </ProfilesContainer>
       </ViewportContainer>
     </HomeContainer>

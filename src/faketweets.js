@@ -18,8 +18,9 @@ export const tweets = [
         "url": "https://twitter.com/lolitataub/status/1491050398786162695"
     },
     {
-        "handle": "elonmusk3",
-        "tweet": "who should i follow in the web3/crypto/DAO space?",
-        "photo": "https://pbs.twimg.com/profile_images/1503591435324563456/foUrqiEw_400x400.jpg"
+        "handle": "PatFlynn",
+        "tweet": "Do you happen to know anyone I should follow or speak to if I want to learn more about business opportunities in the Metaverse?",
+        "photo": "https://pbs.twimg.com/profile_images/1337437883125301248/2ABzVlL9_400x400.jpg",
+        "url": "https://twitter.com/PatFlynn/status/1478407505952731138"
     }
 ]
