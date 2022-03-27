@@ -1,1 +1,3 @@
-export * from './Routes.js';
+export * from './Routes';
+export * from './Colors';
+export * from './Typography';

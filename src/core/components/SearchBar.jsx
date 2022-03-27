@@ -1,16 +1,40 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { h3 } from '../constants/Typography';
+import { h4 } from '../constants/Typography';
 
 const StyledText = styled.div`
-  ${h3}
+  ${h4}
 `;
-const Form = styled.form``;
-const TextInput = styled.input``;
-const Button = styled.div`
-  ${h3}
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+`;
+
+const TextInput = styled.input`
+  ${h4}
   font-family: 'MonumentExtended';
+  // font-size: 20px;
+  text-align: center;
+  height: 67px;
+  width: 98.75%;
+  margin-bottom: 34px;
+  border: 2px solid #000;
+`;
+const Button = styled.button`
+  height: 67px;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 67px;
+
+  color: #fff;
+  background: #000000;
+  border: 2px solid #000;
+  font-family: 'MonumentExtended';
+  cursor: pointer;
 `;
 export const SearchBar = () => {
   const navigate = useNavigate();
@@ -26,13 +50,12 @@ export const SearchBar = () => {
       <TextInput
         ref={textInputRef}
         type='text'
-        placeholder='Enter a Twitter handle'
+        placeholder='Enter any Twitter handle'
         onSubmit={onSubmit}
       ></TextInput>
       <Button type='submit' onClick={onSubmit}>
         <StyledText>Search</StyledText>
       </Button>
-      <StyledText>test</StyledText>
     </Form>
   );
 };
