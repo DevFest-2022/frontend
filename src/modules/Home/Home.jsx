@@ -64,9 +64,7 @@ const FollowNextContainer = styled.div`
 
 const ProfilesContainer = styled.div`
   display: inline-block;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
 `;
 
 export const Home = () => {

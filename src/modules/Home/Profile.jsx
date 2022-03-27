@@ -14,9 +14,7 @@ export const ProfileContainer = styled.div`
 
 export const ProfileImage = styled.img`
   border-radius: 50%;
-  display: inline-block;
   height:80px;
-  margin-top: 15px;
 `;
 
 export const ProfileHeader = styled.div`
@@ -34,7 +32,7 @@ export const Handle = styled.div`
 `;
 
 export const Bio = styled.div`
-    margin-top: 10px;
+    margin: 10px 0px;
 `;
 
 export const Search = styled.div`
@@ -42,9 +40,8 @@ export const Search = styled.div`
     color: white;
     padding: 10px;
     width: 200px;
-    margin-top: 20px;
+    margin: 50px auto auto auto;
     text-align: center;
-    margin-left: 50%;
 `;
 
 export const Profile = ({data}) => {
@@ -57,7 +54,6 @@ export const Profile = ({data}) => {
                 </ProfileHeader>
             <Bio>{data.bio}</Bio>
             <Search>Search</Search>
-
         </ProfileContainer>    
 
     );
