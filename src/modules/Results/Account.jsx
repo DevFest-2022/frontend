@@ -11,7 +11,7 @@ export const AccountContainer = styled.div`
 export const ProfileImage = styled.img`
   border-radius: 50%;
   display: inline-block;
-  height:80px;
+  height: 80px;
   margin-top: 15px;
 `;
 
@@ -19,6 +19,7 @@ export const ProfileText = styled.div`
   display: inline-block;
   vertical-align: top;
   margin: 10px;
+  width: 100%;
 `;
 
 export const ProfileHeader = styled.div`
@@ -35,7 +36,7 @@ export const Handle = styled.div`
 `;
 
 export const Bio = styled.div`
-    margin-top: 10px;
+  margin-top: 10px;
 `;
 
 export const ViewProfile = styled.div`
@@ -44,20 +45,33 @@ export const ViewProfile = styled.div`
   color: white;
   padding: 10px 30px;
   vertical-align: top;
+  justify-content: flex-end;
+  align-items: right;
+  float: right;
+  cursor: pointer;
 `;
 
 export const Account = ({ accountData }) => {
-    return (
-        <AccountContainer>
-            <ProfileImage src={accountData.photo} />
-            <ProfileText>
-                <ProfileHeader>
-                    <Name>{accountData.name}</Name>
-                    <Handle>@{accountData.handle}</Handle>
-                </ProfileHeader>
-{/*                 <ViewProfile>view profile</ViewProfile>
- */}                <Bio>{accountData.bio}</Bio>
-            </ProfileText>
-        </AccountContainer>
-    );
+  return (
+    <AccountContainer>
+      <ProfileImage src={accountData.photo_url} />
+      <ProfileText>
+        <ProfileHeader>
+          <Name>{accountData.name}</Name>
+          <Handle>@{accountData.handle}</Handle>
+        </ProfileHeader>
+        <ViewProfile
+          onClick={() =>
+            window.open(
+              'https://www.twitter.com/' + accountData.handle,
+              '_blank'
+            )
+          }
+        >
+          view profile
+        </ViewProfile>
+        <Bio>{accountData.bio}</Bio>
+      </ProfileText>
+    </AccountContainer>
+  );
 };

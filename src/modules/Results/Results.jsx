@@ -11,23 +11,36 @@ import { data } from '../../fakedata.js';
 import { Account } from './Account';
 import { SearchBarResults } from '../../core';
 import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 
 export const Results = () => {
   const [searchParams] = useSearchParams();
   const [searchedUserStr] = useState(searchParams.get('q'));
+  const [accountData, setAccountData] = useState([]);
 
   useEffect(() => {
+    axios
+      .get('http://127.0.0.1:5000/' + searchedUserStr)
+      .then((response) => {
+        console.log(response.data.results);
+        setAccountData(response.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     console.log('q search param: ' + searchParams.get('q'));
-  }, [searchParams]);
+  }, [searchParams, searchedUserStr]);
 
-  let accounts = [];
-  data.accounts.forEach((account) => {
-    accounts.push(
-      <Account key={account.handle} accountData={account}>
-        {account.handle}
-      </Account>
-    );
-  });
+  const makeAccounts = () => {
+    console.log('running!');
+    return accountData.map((account) => {
+      return (
+        <Account key={account.handle} accountData={account}>
+          {account.handle}
+        </Account>
+      );
+    });
+  };
   return (
     <div>
       <ComponentContainer>
@@ -40,7 +53,9 @@ export const Results = () => {
               Follow them to make your feed look like @{searchedUserStr}&apos;s
             </ResultSubheader>
           </HeadersContainer>
-          <AccountsContainer>{accounts}</AccountsContainer>
+          {accountData.length > 0 ? (
+            <AccountsContainer>{makeAccounts()}</AccountsContainer>
+          ) : null}
         </ResultContainer>
       </ComponentContainer>
     </div>
