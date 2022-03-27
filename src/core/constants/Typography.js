@@ -46,13 +46,13 @@ export const h2 = css`
     font-size: 25px,
     font-weight: 500,
     @media ${device.mobileS} {
-        font-size: 1.67rem;
-        line-height: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
       }
     
       @media ${device.tablet} {
-        font-size: 2.25rem;
-        line-height: 3rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
       } ;
 `;
 
