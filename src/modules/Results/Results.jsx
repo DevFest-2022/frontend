@@ -7,7 +7,7 @@ import {
   ComponentContainer,
   HeadersContainer,
 } from './Results.styles';
-import { data } from '../../fakedata.js';
+import { Loading } from './Loading';
 import { Account } from './Account';
 import { SearchBarResults } from '../../core';
 import { useSearchParams } from 'react-router-dom';
@@ -55,7 +55,9 @@ export const Results = () => {
           </HeadersContainer>
           {accountData.length > 0 ? (
             <AccountsContainer>{makeAccounts()}</AccountsContainer>
-          ) : null}
+          ) : (
+            <Loading />
+          )}
         </ResultContainer>
       </ComponentContainer>
     </div>
