@@ -44,6 +44,7 @@ export const SearchBarResults = () => {
     if (textInputRef.current.value !== '') {
       console.log(textInputRef.current.value);
       navigate('/results?q=' + textInputRef.current.value);
+      window.location.reload();
     }
   };
 

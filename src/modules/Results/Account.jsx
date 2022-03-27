@@ -11,7 +11,8 @@ export const AccountContainer = styled.div`
 export const ProfileImage = styled.img`
   border-radius: 50%;
   display: inline-block;
-  height:120px;
+  height:80px;
+  margin-top: 15px;
 `;
 
 export const ProfileText = styled.div`
@@ -54,8 +55,8 @@ export const Account = ({ accountData }) => {
                     <Name>{accountData.name}</Name>
                     <Handle>@{accountData.handle}</Handle>
                 </ProfileHeader>
-                <ViewProfile>view profile</ViewProfile>
-                <Bio>{accountData.bio}</Bio>
+{/*                 <ViewProfile>view profile</ViewProfile>
+ */}                <Bio>{accountData.bio}</Bio>
             </ProfileText>
         </AccountContainer>
     );
