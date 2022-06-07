@@ -64,14 +64,16 @@ export const Results = () => {
   const [accountData, setAccountData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('http://127.0.0.1:5000/' + searchedUserStr)
-      .then((response) => {
-        setAccountData(response.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetch('http://localhost:5001/' + searchedUserStr).then((response) => {
+      response
+        .json()
+        .then((data) => {
+          setAccountData(data.results);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
   }, [searchParams, searchedUserStr]);
 
   const makeAccounts = () => {
